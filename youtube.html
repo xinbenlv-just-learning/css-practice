@@ -95,6 +95,7 @@
 
         .video {
             width: 100%;
+            line-height: 0px;
             padding-top: 56.25%;
             background: gold;
         }
@@ -210,6 +211,10 @@
             .search-form {
                 justify-content: flex-end;
             }
+
+            #upload,#other_apps,#bell {
+                display:none;
+            }
         }
     </style>
 </head>
@@ -265,7 +270,7 @@
             </div>
         </div>
         <div class="grid main-container">
-            <div class="video demo-box">video</div>
+            <div class="video demo-box"></div>
             <div class="panel demo-box">
                 <div class="video-desc">video desc</div>
                 <div class="channel-desc">channel desc</div>
