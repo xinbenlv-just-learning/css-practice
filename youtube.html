@@ -7,6 +7,9 @@
     <title>Document</title>
     <link rel="stylesheet" href="common.css">
     <style>
+        * {
+            font-family: Roboto, Arial, sans-serif;
+        }
         .header {
             height: 56px;
             border: 1px dotted gray;
@@ -52,7 +55,6 @@
             flex-grow: 0;
             flex-shrink: 1;
             flex-basis: 728px;
-
         }
 
         .border-box {
@@ -67,6 +69,7 @@
         .grid {
             display: grid;
             grid-template-columns: 1fr 400px;
+            gap: 24px;
         }
 
         .main-container {
@@ -81,7 +84,7 @@
 
         .video {
             width: 100%;
-            padding-top: 56.35%;
+            padding-top: 56.25%;
             background: gold;
         }
 
@@ -149,6 +152,32 @@
             line-height: unset;
             text-align: start;
         }
+
+        .next-video-card {
+            display: flex;
+        }
+
+        .next-video-thumbnail {
+            height: 94px;
+            flex:0 0 168px;
+            background-color: white;
+            border: 1px solid;
+        }
+
+        .next-video-title {
+            font-size: 14px;
+            font-weight: 500;
+            font-family: Roboto, Arial, sans-serif;
+        }
+        .next-video-desc {
+            font-size: 13px;
+            font-weight: 400;
+        }
+        .next-video-desc .view-count::after {
+            content: "•";
+            margin:0 4px;
+        }
+
     </style>
 </head>
 
@@ -204,10 +233,23 @@
         </div>
         <div class="grid main-container">
             <div class="video demo-box">video</div>
-            <div class="next demo-box">next</div>
             <div class="panel demo-box">
                 <div class="video-desc">video desc</div>
                 <div class="channel-desc">channel desc</div>
+            </div>
+            <div class="next flex-column flex-container">
+                <div class="next-video-card flex-container flex-row" v-for="i in nextVideoNums">
+                    <div class="next-video-thumbnail"></div>
+                    <div>
+                        <div class="next-video-title">Sens. Blumenthal and Graham Introduce Bipartisan Legislation </div>
+                        <div class="next-video-desc">SenatorBlumenthal</div>
+                        <div class="next-video-desc">
+                            <span class="view-count">664 views</span>
+                            <span>{{i}} day ago</span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
             <div class="video-comments demo-box flex-container flex-column">
                 <div class="flex-container flex-row" v-for="i in commentsNum">
@@ -228,7 +270,8 @@
             el: '#app',
             data: {
                 username: "John Doe",
-                commentsNum: 5,
+                commentsNum: 10,
+                nextVideoNums: 13,
             }
         });
     </script>
