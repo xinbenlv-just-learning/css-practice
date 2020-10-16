@@ -184,6 +184,9 @@
             content: "•";
             margin:0 4px;
         }
+
+
+
         @media all and (max-width: 768px) {
             .grid {
                 grid-template-columns: 1fr;
@@ -193,6 +196,15 @@
             .next {
                 grid-row: unset;
                 grid-column: unset;
+            }
+        }
+
+        @media all and (max-width: 656px) {
+            .search-bar-container {
+                display: none;
+            }
+            .search-form {
+                justify-content: flex-end;
             }
         }
     </style>
@@ -211,7 +223,7 @@
             </div>
             <div class="nav-item search border-box">
                 <form class="flex-container search-form" action="">
-                    <div class="flex-container flex-grow-1">
+                    <div class="search-bar-container flex-container flex-grow-1">
                         <input type="text" class="search-bar flex-grow-1">
                         <div class="search-auto-complete">
                             <div class="search-auto-complete-item">
