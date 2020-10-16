@@ -66,6 +66,10 @@
             display: grid;
             grid-template-columns: 1fr 400px;
         }
+        .main-container {
+            padding: 16px 24px ;
+        }
+
 
         .next {
             grid-row: 1/4;
@@ -115,6 +119,26 @@
             padding: 12px;
             justify-content: space-between;
             display: flex;
+        }
+        .video-desc {
+            height: 100px;
+            padding: 20px 0 8px 0;
+            border-bottom: 1px solid;
+        }
+
+        .comment-profile-pic {
+            border-radius: 20px;
+            height: 40px;
+            background-color: white;
+            flex-shrink: 0;
+            flex-grow:0;
+            flex-basis: 40px;
+        }
+
+        .video-comments {
+            gap: 16px;
+            line-height: unset;
+            text-align: start;
         }
         
     </style>
@@ -172,11 +196,43 @@
     </div>
 
     </div>
-    <div class="grid">
+    <div class="grid main-container">
         <div class="video demo-box">video</div>
         <div class="next demo-box">next</div>
-        <div class="description demo-box">description</div>
-        <div class="comments demo-box">comments</div>
+        <div class="panel demo-box">
+            <div class="video-desc">video desc</div>
+            <div class="channel-desc">channel desc</div>
+        </div>
+        <div class="video-comments demo-box flex-container flex-column">
+            <div class="flex-container flex-row">
+                <div class="comment-profile-pic"></div>
+                <div>
+                    <div> <b>user name</b></div>
+                    <div>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat temporibus atque voluptatem. Labore culpa id optio commodi perspiciatis asperiores aliquid excepturi eaque sequi in. Obcaecati ea fugit dolor omnis illum.</div>
+                </div>
+            </div>
+            <div class="flex-container flex-row">
+                <div class="comment-profile-pic"></div>
+                <div>
+                    <div> <b>user name</b></div>
+                    <div>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat temporibus atque voluptatem. Labore culpa id optio commodi perspiciatis asperiores aliquid excepturi eaque sequi in. Obcaecati ea fugit dolor omnis illum.</div>
+                </div>
+            </div>
+            <div class="flex-container flex-row">
+                <div class="comment-profile-pic"></div>
+                <div>
+                    <div> <b>user name</b></div>
+                    <div>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat temporibus atque voluptatem. Labore culpa id optio commodi perspiciatis asperiores aliquid excepturi eaque sequi in. Obcaecati ea fugit dolor omnis illum.</div>
+                </div>
+            </div>
+            <div class="flex-container flex-row">
+                <div class="comment-profile-pic"></div>
+                <div>
+                    <div> <b>user name</b></div>
+                    <div>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat temporibus atque voluptatem. Labore culpa id optio commodi perspiciatis asperiores aliquid excepturi eaque sequi in. Obcaecati ea fugit dolor omnis illum.</div>
+                </div>
+            </div>
+        </div>
     </div>
 
 </body>
