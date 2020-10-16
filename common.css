@@ -1,0 +1,19 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 20px;
+    border: 1px dotted black;
+}
+
+.demo-box {
+    min-height:100px;
+    line-height: 100px;
+    text-align: center;
+    border: 2px solid cyan;
+    background-color: lightcyan;
+}

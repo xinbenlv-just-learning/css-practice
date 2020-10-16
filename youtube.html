@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="common.css">
+    <style>
+        .header {
+            height: 56px;
+            border: 1px dotted gray;
+            background-color: lightgray;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1em;
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+
+        .flex-container {
+            display: flex;
+            gap: 1em;
+        }
+
+        .icon {
+            background-color: white;
+            border: 1px solid;
+            border-radius: 12px;
+            height: 24px;
+            width: 24px;
+        }
+        .profile-picture .icon {
+            border-radius: 16px;
+            height: 32px;
+            width: 32px;
+        }
+        .nav-right {
+            align-items: center;
+        }
+
+        .logo {
+            flex-basis: 106px;
+            flex-grow: 0;
+            flex-shrink: 0;
+        }
+
+        .search {
+            flex-grow: 0;
+            flex-shrink: 1;
+            flex-basis: 728px;
+            
+        }
+
+        .border-box {
+            border: 2px solid cyan;
+            background-color: lightcyan;
+        }
+
+        .flex-grow {
+            flex-grow: 1
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 400px;
+        }
+
+        .next {
+            grid-row: 1/4;
+            grid-column: 2 / 3;
+        }
+
+        .video {
+           width: 100%;
+           padding-top: 56.35%;
+           background: gold;
+        }
+
+        .flex-grow-1 {
+            flex-grow:1;
+        }
+        .search-form {
+            gap: 0em;
+        }
+        .search-button {
+            flex-basis: 100px;
+            min-height: 32px;
+            border: 1px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        /* .search-bar {
+            min-height: 24px;
+        } */
+        .search-form .flex-container {
+            position: relative;
+        }
+        .search-auto-complete {
+            position:absolute;
+            min-height: 50px;
+            width: 100%;
+            top:40px;
+            border: 1px solid;
+            background-color:white ;
+            opacity: 0.5;
+            padding-top:16px;
+            padding-bottom: 16px;
+        }
+        .search-auto-complete-item {
+            border: 1px solid;
+            min-height: 24px;
+            padding: 12px;
+            justify-content: space-between;
+            display: flex;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="flex-container">
+            <div class="nav-item three-line">
+                <div class="icon"></div>
+            </div>
+            <div class="nav-item logo">
+                <div class="border-box ">YT Premium</div>
+            </div>
+        </div>
+
+        <div class="nav-item search border-box">
+            <form class="flex-container search-form" action="">
+                <div class="flex-container flex-grow-1">
+                    <input type="text" class="search-bar flex-grow-1">
+                    <div class="search-auto-complete">
+                            <div class="search-auto-complete-item">
+                                <div>apple</div>
+                                <div>remove</div>
+                            </div>
+                            <div class="search-auto-complete-item">
+                                <div>banana</div>
+                                <div>remove</div>
+                            </div>
+                            <div class="search-auto-complete-item">
+                                <div>cranberry</div>
+                                <div>remove</div>
+                            </div>
+                    </div>
+                </div>
+                <div class="search-button">
+                    <div class="icon"></div>
+                </div>
+            </form>
+        </div>
+        <div class="nav-right flex-container">
+            <div class="nav-item" id="upload">
+                <div class="icon"></div>
+            </div>
+            <div class="nav-item" id="other_apps">
+                <div class="icon"></div>
+            </div>
+            <div class="nav-item" id="bell">
+                <div class="icon"></div>
+            </div>
+            <div class="nav-item profile-picture">
+                <div class="icon"></div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+    <div class="grid">
+        <div class="video demo-box">video</div>
+        <div class="next demo-box">next</div>
+        <div class="description demo-box">description</div>
+        <div class="comments demo-box">comments</div>
+    </div>
+
+</body>
+
+</html>
