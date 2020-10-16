@@ -10,6 +10,10 @@
         * {
             font-family: Roboto, Arial, sans-serif;
         }
+        body {
+            margin: 0;
+            padding: 0;
+        }
         .header {
             height: 56px;
             border: 1px dotted gray;
@@ -44,9 +48,12 @@
         .nav-right {
             align-items: center;
         }
+        .nav-left {
+            padding-right: 16px;
+            flex-shrink: 0;
+        }
 
         .logo {
-            flex-basis: 106px;
             flex-grow: 0;
             flex-shrink: 0;
         }
@@ -177,14 +184,24 @@
             content: "•";
             margin:0 4px;
         }
+        @media all and (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
 
+            .next {
+                grid-row: unset;
+                grid-column: unset;
+            }
+        }
     </style>
 </head>
 
 <body>
     <div class="body-container" id="app">
         <div class="header">
-            <div class="flex-container">
+            <div class="nav-left flex-container">
                 <div class="nav-item three-line">
                     <div class="icon"></div>
                 </div>
