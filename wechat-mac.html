@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="common.css">
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        .main-container {
+            display: flex;
+        }
+
+        .left-nav {
+            flex: 0 0 68px;
+            display: flex;
+            background-color: rgba(64, 64, 64, 100);
+        }
+
+        .mid-panel {
+            flex: 0 0 309px;
+        }
+
+        .right-panel {
+            flex: 1 1 400px;
+        }
+
+        .mid-panel-main-area {
+            max-height: calc(100vh - 62px);
+            overflow-y: scroll;
+        }
+
+        .right-panel-item {
+            flex: 1 0 100px;
+        }
+
+        .chat-avatar {
+            height: 32px;
+            border-radius: 4px;
+            flex: 0 0 32px;
+            margin-right: 16px;
+        }
+
+        .chatroom {
+            align-items: center;
+            border-bottom: 1px solid black;
+            min-height: 72px;
+            padding: 16px;
+        }
+
+        .nav-item {
+            border-radius: 4px;
+            height: 32px;
+            width: 32px;
+            margin-bottom: 24px;
+        }
+
+        .dots {
+            display: flex;
+            justify-content: space-around;
+            padding: 8px 4px;
+            margin-bottom: 16px;
+            height: 50px;
+        }
+
+        .dot {
+            height: 10px;
+            border-radius: 5px;
+            background-color: white;
+            flex: 0 0 10px;
+        }
+
+        .left-nav-btn-group-top {
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .left-icons {
+            justify-content: space-between;
+            align-items: center;
+            height: calc(100vh - 70px);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .left-nav-btn-group-bottom .nav-item {
+            margin-bottom: 22px;
+        }
+
+        .search-area {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .search-bar {
+            height: 20px;
+            border-radius: 4px;
+            flex: 1 0 auto;
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+            padding-left: 8px;
+            padding-right: 8px;
+        }
+
+        .search-button {
+            height: 20px;
+            width: 28px;
+            text-align: center;
+        }
+
+        .search-icon {
+            width: 12px;
+            height: 12px;
+            border-radius: 6px;
+            margin-right: 8px;
+        }
+
+        .right-panel-header {
+            height: 60px;
+        }
+
+        .chat-stream {
+            flex: 1 1 auto;
+            justify-content: flex-end;
+            height: calc(100vh - 362px);
+        }
+
+        .chat-send-area {
+            min-height: 300px;
+        }
+        .chat-msg {
+            margin-top: 0px;
+            padding:16px;
+        }
+        .chat-msg-avatar {
+            width: 32px;
+            height: 32px;
+            margin-inline-end: 16px;  
+            flex: 0 0 32px;
+        }
+        .chat-msg-body {
+            max-width: 75%;
+            padding: 16px;
+            border-radius: 4px;
+        }
+        .chat-stream-inner {
+            max-height: 100%;
+            overflow: auto;
+            flex-direction: column-reverse;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-container" id="app">
+        <div class="left-nav cyb flex-container flex-column">
+            <div class="dots">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+            <div class="left-icons flex-container flex-column">
+                <div class="left-nav-btn-group-top">
+                    <div class="nav-item yb me"></div>
+                    <div class="nav-item yb chat"></div>
+                    <div class="nav-item yb contacts"></div>
+                    <div class="nav-item yb fav"></div>
+                    <div class="nav-item yb file"></div>
+                </div>
+                <div class="left-nav-btn-group-bottom">
+                    <div class="nav-item yb phone-status"></div>
+                    <div class="nav-item yb more"></div>
+                </div>
+            </div>
+        </div>
+        <div class="mid-panel cyb">
+            <div class="search-area">
+                <div class="search-bar yb" contenteditable="true">
+                    <div class="search-icon cyb"></div>
+                    <div>search</div>
+                </div>
+                <div class="search-button yb">+</div>
+            </div>
+            <div class="mid-panel-main-area flex-container flex-column">
+                <div v-for="chat in numChats" class="yb chatroom flex-container flex-row">
+                    <div class="cyb chat-avatar"></div>
+                    <div class="mid-panel-item">
+                        <p><b>user</b></p>
+                        <p>message</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right-panel cyb flex-container flex-column">
+            <div class="yb right-panel-header"></div>
+            <div class="cyb chat-stream">
+                <div class="chat-stream-inner flex-container">
+                <template v-for="i in numMsg">
+                    <div class="cyb their chat-msg flex-container flex-row">
+                        <div class="rb chat-msg-avatar"></div>
+                        <div class="rb chat-msg-body">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore
+                            fugit error velit animi ad quibusdam, earum aspernatur consectetur sunt, corrupti voluptate
+                            autem quae, vero tempore architecto vitae iusto porro soluta.</div>
+                    </div>
+                    <div class="cyb rtl my chat-msg flex-container flex-row">
+                        <div class="gb chat-msg-avatar"></div>
+                        <div class="gb chat-msg-body">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore
+                            fugit error velit animi ad quibusdam, earum aspernatur</div>
+                    </div>
+                </template>
+                </div>
+            </div>
+            <div class="yb chat-send-area"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app6 = new Vue({
+            el: '#app',
+            data: {
+                message: 'Hello Vue!',
+                numChats: 50,
+                numMsg:10,
+            }
+        })
+    </script>
+</body>
+
+</html>

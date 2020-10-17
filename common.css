@@ -7,7 +7,7 @@
 
 body {
     padding: 20px;
-    border: 1px dotted black;
+    box-sizing: border-box;
 }
 
 .demo-box {
@@ -18,9 +18,47 @@ body {
     background-color: lightcyan;
 }
 
+.yellow-box,.yb {
+    border: 1px dotted rgba(255,255,0,0.75);
+    background-color: rgba(255,255,0,0.5);
+    
+}
+
+.cyan-box,.cyb {
+    border: 1px dotted rgba(0,255,255,0.75);;
+    background-color: rgba(122,255,255,0.5);;
+}
+
+.cyan-box,.cyb {
+    border: 1px dotted rgba(0,255,255,0.75);;
+    background-color: rgba(122,255,255,0.5);;
+}
+
+.red-box,.rb {
+    border: 1px dotted rgba(255,0,0,0.75);;
+    background-color: rgba(255,122,122,0.5);;
+}
+
+.green-box,.gb {
+    border: 1px dotted rgba(0,255,0,0.75);;
+    background-color: rgba(122,255,122,0.5);;
+}
+
+
+.flex-container {
+    display:flex;
+}
+
 .flex-column {
     flex-direction: column;
 }
 .flex-row {
     flex-direction: row;
+}
+.align-items-center {
+    align-items: center;
+}
+
+.rtl {
+    direction: rtl;
 }
